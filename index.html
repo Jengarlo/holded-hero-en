@@ -245,8 +245,8 @@ function Sidebar() {
 }
 
 const fmt = n => {
-  const s = n.toFixed(2);
-  return (s.endsWith('.00') ? String(Math.round(n)) : s.replace('.',',')) + ' €';
+  if (Number.isInteger(n) || n === Math.floor(n)) return n.toLocaleString('en-US');
+  return n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
 };
 
 /* ─────────────────────────────────────────────────────────
@@ -319,7 +319,7 @@ function InvoiceCard({ accent, onTotalChange }) {
         </div>
         {/* QR aligned right */}
         <div style={{flexShrink:0, width:76, height:76, overflow:'hidden', marginLeft:'auto'}}>
-          <QRImg url="https://www.holded.com/es/programa-facturacion-verifactu" size={76} />
+          <QRImg url="https://www.holded.com/en/invoicing-software" size={76} />
         </div>
       </div>
 
@@ -390,7 +390,7 @@ function InvoiceCard({ accent, onTotalChange }) {
                   ? <div style={{position:'absolute', right:113, top:15, display:'flex', alignItems:'center', gap:3}}>
                       <input type="number" min="0" value={line.price||''} placeholder="0" onChange={e=>updateLine(line.id,'price',e.target.value)} onFocus={e=>e.target.select()}
                         style={{width:60, fontSize:12, fontWeight:400, color:'#374151', textAlign:'right', background:'transparent', border:'none', outline:'none', fontFamily:'inherit', padding:0}} />
-                      <span style={{fontSize:12, fontWeight:400, color:'#374151'}}>€</span>
+                      <span style={{fontSize:12, fontWeight:400, color:'#374151'}}></span>
                     </div>
                   : <div style={{position:'absolute', right:113, top:15, fontSize:12, fontWeight:400, color:'#374151', textAlign:'right', width:80}}>{line.price > 0 ? fmt(line.price) : '—'}</div>
                 }
@@ -469,10 +469,10 @@ function RightPanel({ accent, onAccentChange, invoiceTotal }) {
   const [tab,      setTab]      = useState('general');
   const [approved, setApproved] = useState(false);
   const [msgs,     setMsgs]     = useState([
-    { initials:'M',  color:'#0891b2', name:'María García',
+    { initials:'M',  color:'#0891b2', name:'Maria Garcia',
       time:'31/03/2026 · 10:45', text:'Invoice reviewed. All correct, ready to approve.' },
     { initials:'B',  color:'#7c5cfc', name:'Me',
-      time:'31/03/2026 · 10:52', text:'Thanks for reviewing it so quickly María!' },
+      time:'31/03/2026 · 10:52', text:'Thanks for reviewing it so quickly Maria!' },
   ]);
   const [msgInput, setMsgInput] = useState('');
   const panelScrollRef = React.useRef(null);
@@ -569,7 +569,7 @@ function RightPanel({ accent, onAccentChange, invoiceTotal }) {
                 Reviewed by your advisor
               </p>
               <p style={{fontSize:12, fontWeight:500, color:'#111827', marginTop:4, lineHeight:'14px'}}>
-                María García · 31/03/2026
+                Maria Garcia · 31/03/2026
               </p>
             </div>
           </div>
@@ -688,9 +688,9 @@ function RightPanel({ accent, onAccentChange, invoiceTotal }) {
         {/* ═══════ HISTORY ═══════ */}
         {tab==='historial' && (() => {
           const items = [
-            { action:'Invoice created',              user:'Biel González', time:'29/03/2026 · 09:12' },
-            { action:'Reviewed by Advisor',           user:'María García',   time:'31/03/2026 · 10:44' },
-            { action:'Sent by email',                 user:'Biel González', time:'31/03/2026 · 11:01' },
+            { action:'Invoice created',              user:'Biel Gonzalez', time:'29/03/2026 · 09:12' },
+            { action:'Reviewed by Advisor',           user:'Maria Garcia',   time:'31/03/2026 · 10:44' },
+            { action:'Sent by email',                 user:'Biel Gonzalez', time:'31/03/2026 · 11:01' },
           ];
           return (
             <div style={{position:'relative', margin:'0 -6px'}}>
@@ -791,9 +791,9 @@ function App() {
       }} />
 
       <div className="mockup-scale" style={{position:'relative'}}>
-        {/* Verifactu badge */}
+        {/* EN Certificate Software badge */}
         <div className={`verifactu-wrap${vfIntro ? ' verifactu-intro' : ''}`} style={{position:'absolute', top:-59, right:-54, width:112, height:112, zIndex:10}}>
-          <img src={A.verifactu} alt="Verifactu Certified Software"
+          <img src={A.verifactu} alt="EN Certificate Software"
             style={{width:112, height:112, display:'block'}} />
           <div style={{position:'absolute', inset:6, borderRadius:'50%', overflow:'hidden', pointerEvents:'none'}}>
             <div className="verifactu-shine" style={{position:'absolute', top:'-10%', left:'-70%', width:'45%', height:'120%'}} />
