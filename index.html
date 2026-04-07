@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Holded ‚Äî Hero</title>
+  <title>Holded — Hero</title>
   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -129,7 +129,7 @@
 <script type="text/babel">
 const { useState } = React;
 
-/* ‚îÄ‚îÄ Figma assets ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+/* ── Figma assets ──────────────────────────────────────── */
 const A = {
   diamond:  "https://www.figma.com/api/mcp/asset/37f252ff-bb3e-482f-8491-dba747618207",
   avatar:   "https://www.figma.com/api/mcp/asset/a3d34512-7c3f-4fb3-914f-cee516508a20",
@@ -145,13 +145,13 @@ const A = {
 /* Exact Figma swatches */
 const SWATCHES = ['#7C5CFC','#0891B2','#16A34A','#EA580C','#1E293B'];
 
-/* Hex ‚Üí rgba helper for invoice logo */
+/* Hex → rgba helper for invoice logo */
 const hexRgba = (hex, a) => {
   const [r,g,b] = [1,3,5].map(i => parseInt(hex.slice(i,i+2),16));
   return `rgba(${r},${g},${b},${a})`;
 };
 
-/* Nav items ‚Äî FA7 Pro Regular unicode */
+/* Nav items — FA7 Pro Regular unicode */
 const NAV = [
   { u:'\uf015', label:'Home'        },
   { u:'\ue0e3', label:'Sales',  active:true },
@@ -163,7 +163,7 @@ const NAV = [
   { u:'\ue473', label:'Analytics'   },
 ];
 
-/* ‚îÄ‚îÄ Scannable QR Code with rounded style ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+/* ── Scannable QR Code with rounded style ───────────── */
 function QRImg({ url, size }) {
   const ref = React.useRef();
   React.useEffect(() => {
@@ -186,9 +186,9 @@ function QRImg({ url, size }) {
   return <div ref={ref} style={{width:size, height:size, lineHeight:0}} />;
 }
 
-/* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
-   SIDEBAR  (62 √ó 600, #1f2937)
-‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+/* ─────────────────────────────────────────────────────────
+   SIDEBAR  (62 × 600, #1f2937)
+───────────────────────────────────────────────────────── */
 function Sidebar() {
   return (
     <div style={{
@@ -206,7 +206,7 @@ function Sidebar() {
       {/* Separator */}
       <div style={{width:'100%', height:'0.9px', background:'#374151', marginBottom:10}} />
 
-      {/* Nav ‚Äî hover only, no click */}
+      {/* Nav — hover only, no click */}
       <div style={{
         display:'flex', flexDirection:'column',
         gap:10, padding:'0 15px', flex:1, alignItems:'stretch',
@@ -246,12 +246,12 @@ function Sidebar() {
 
 const fmt = n => {
   const s = n.toFixed(2);
-  return (s.endsWith('.00') ? String(Math.round(n)) : s.replace('.',',')) + ' ‚Ç¨';
+  return (s.endsWith('.00') ? String(Math.round(n)) : s.replace('.',',')) + ' €';
 };
 
-/* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
-   INVOICE CARD  (664 √ó 576) ‚Äî flex layout, dynamic lines
-‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+/* ─────────────────────────────────────────────────────────
+   INVOICE CARD  (664 × 576) — flex layout, dynamic lines
+───────────────────────────────────────────────────────── */
 function InvoiceCard({ accent, onTotalChange }) {
   const P = 30, W = 580;
 
@@ -299,7 +299,7 @@ function InvoiceCard({ accent, onTotalChange }) {
       display:'flex', flexDirection:'column',
     }}>
 
-      {/* ‚îÄ‚îÄ HEADER ‚îÄ‚îÄ */}
+      {/* ── HEADER ── */}
       <div style={{flexShrink:0, position:'relative', width:W,
         display:'flex', alignItems:'center', padding:P, paddingBottom:P}}>
         <div style={{position:'absolute', bottom:0, left:P, right:P, height:1, background:'#f3f4f6'}} />
@@ -312,7 +312,7 @@ function InvoiceCard({ accent, onTotalChange }) {
           <div style={{display:'flex', flexDirection:'column', justifyContent:'space-between', height:44}}>
             <div style={{fontSize:14, fontWeight:700, color:'#111827', lineHeight:1}}>Solar Tech S.A</div>
             <div>
-              <div style={{fontSize:10, fontWeight:500, color:'#9ca3af', lineHeight:'13px'}}>Passeig de Gr√†cia, 78</div>
+              <div style={{fontSize:10, fontWeight:500, color:'#9ca3af', lineHeight:'13px'}}>Passeig de Gràcia, 78</div>
               <div style={{fontSize:10, fontWeight:500, color:'#9ca3af', lineHeight:'13px'}}>08008 Barcelona</div>
             </div>
           </div>
@@ -323,7 +323,7 @@ function InvoiceCard({ accent, onTotalChange }) {
         </div>
       </div>
 
-      {/* ‚îÄ‚îÄ CLIENT + TOTAL ‚îÄ‚îÄ */}
+      {/* ── CLIENT + TOTAL ── */}
       <div style={{flexShrink:0, position:'relative', padding:`16px ${P}px`}}>
         <div style={{position:'absolute', bottom:0, left:P, right:P, height:1, background:'#f3f4f6'}} />
         <div style={{display:'flex', justifyContent:'space-between', alignItems:'flex-start'}}>
@@ -340,7 +340,7 @@ function InvoiceCard({ accent, onTotalChange }) {
         </div>
       </div>
 
-      {/* ‚îÄ‚îÄ COLUMN HEADERS (37px) ‚îÄ‚îÄ */}
+      {/* ── COLUMN HEADERS (37px) ── */}
       <div style={{flexShrink:0, position:'relative', height:37}}>
         <div style={{position:'absolute', bottom:0, left:P, right:P, height:1, background:'#f3f4f6'}} />
         <div style={{position:'absolute', left:P,   top:14, fontSize:9, fontWeight:700, color:'#9ca3af', letterSpacing:'0.06em'}}>DESCRIPTION</div>
@@ -349,7 +349,7 @@ function InvoiceCard({ accent, onTotalChange }) {
         <div style={{position:'absolute', right:P,   top:14, fontSize:9, fontWeight:700, color:'#9ca3af', letterSpacing:'0.06em', textAlign:'right'}}>TOTAL</div>
       </div>
 
-      {/* ‚îÄ‚îÄ LINES (scrollable) ‚îÄ‚îÄ */}
+      {/* ── LINES (scrollable) ── */}
       <div style={{flexShrink:0}}>
         {lines.map((line) => {
           const isNew = line.id > 2;
@@ -390,9 +390,9 @@ function InvoiceCard({ accent, onTotalChange }) {
                   ? <div style={{position:'absolute', right:113, top:15, display:'flex', alignItems:'center', gap:3}}>
                       <input type="number" min="0" value={line.price||''} placeholder="0" onChange={e=>updateLine(line.id,'price',e.target.value)} onFocus={e=>e.target.select()}
                         style={{width:60, fontSize:12, fontWeight:400, color:'#374151', textAlign:'right', background:'transparent', border:'none', outline:'none', fontFamily:'inherit', padding:0}} />
-                      <span style={{fontSize:12, fontWeight:400, color:'#374151'}}>‚Ç¨</span>
+                      <span style={{fontSize:12, fontWeight:400, color:'#374151'}}>€</span>
                     </div>
-                  : <div style={{position:'absolute', right:113, top:15, fontSize:12, fontWeight:400, color:'#374151', textAlign:'right', width:80}}>{line.price > 0 ? fmt(line.price) : '‚Äî'}</div>
+                  : <div style={{position:'absolute', right:113, top:15, fontSize:12, fontWeight:400, color:'#374151', textAlign:'right', width:80}}>{line.price > 0 ? fmt(line.price) : '—'}</div>
                 }
                 <div style={{position:'absolute', right:P, top:15, fontSize:12, fontWeight:600,
                   color: line.qty*line.price > 0 ? '#1f2937' : '#9ca3af', textAlign:'right'}}>
@@ -409,7 +409,7 @@ function InvoiceCard({ accent, onTotalChange }) {
                       display:'flex', alignItems:'center', justifyContent:'center',
                       flexShrink:0, zIndex:10,
                       boxShadow:'0 2px 6px rgba(0,0,0,0.25)',
-                    }}>√ó</button>
+                    }}>×</button>
                 )}
               </div>
               <D />
@@ -433,7 +433,7 @@ function InvoiceCard({ accent, onTotalChange }) {
         })()}
       </div>
 
-      {/* ‚îÄ‚îÄ FOOTER ‚îÄ‚îÄ */}
+      {/* ── FOOTER ── */}
       <div style={{flexShrink:0, padding:`${P}px`}}>
         <div style={{height:1, background:'#f3f4f6', marginBottom:P}} />
         <div style={{display:'flex', justifyContent:'space-between', alignItems:'flex-start', gap:16}}>
@@ -462,17 +462,17 @@ function InvoiceCard({ accent, onTotalChange }) {
   );
 }
 
-/* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
-   RIGHT PANEL  (377 √ó 600)
-‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+/* ─────────────────────────────────────────────────────────
+   RIGHT PANEL  (377 × 600)
+───────────────────────────────────────────────────────── */
 function RightPanel({ accent, onAccentChange, invoiceTotal }) {
   const [tab,      setTab]      = useState('general');
   const [approved, setApproved] = useState(false);
   const [msgs,     setMsgs]     = useState([
-    { initials:'M',  color:'#0891b2', name:'Mar√≠a Garc√≠a',
-      time:'31/03/2026 ¬∑ 10:45', text:'Invoice reviewed. All correct, ready to approve.' },
+    { initials:'M',  color:'#0891b2', name:'María García',
+      time:'31/03/2026 · 10:45', text:'Invoice reviewed. All correct, ready to approve.' },
     { initials:'B',  color:'#7c5cfc', name:'Me',
-      time:'31/03/2026 ¬∑ 10:52', text:'Thanks for reviewing it so quickly Mar√≠a!' },
+      time:'31/03/2026 · 10:52', text:'Thanks for reviewing it so quickly María!' },
   ]);
   const [msgInput, setMsgInput] = useState('');
   const panelScrollRef = React.useRef(null);
@@ -504,7 +504,7 @@ function RightPanel({ accent, onAccentChange, invoiceTotal }) {
       display:'flex', flexDirection:'column',
     }}>
 
-      {/* ‚îÄ‚îÄ TABS ‚îÄ‚îÄ */}
+      {/* ── TABS ── */}
       <div style={{
         display:'flex', flexDirection:'column',
         padding:'20px 30px 0',
@@ -529,7 +529,7 @@ function RightPanel({ accent, onAccentChange, invoiceTotal }) {
         <div style={{height:1, background:'#f3f4f6'}} />
       </div>
 
-      {/* ‚îÄ‚îÄ CONTENT ‚îÄ‚îÄ */}
+      {/* ── CONTENT ── */}
       <div className="panel-scroll" ref={panelScrollRef}
         style={{
           flex:1, overflowY:'auto',
@@ -537,7 +537,7 @@ function RightPanel({ accent, onAccentChange, invoiceTotal }) {
           display:'flex', flexDirection:'column', gap:18,
         }}>
 
-        {/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê GENERAL ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */}
+        {/* ═══════ GENERAL ═══════ */}
         {tab==='general' && <>
 
           {/* Metadata rows */}
@@ -557,7 +557,7 @@ function RightPanel({ accent, onAccentChange, invoiceTotal }) {
 
           <HR/>
 
-          {/* Green badge ‚Äî Reviewed */}
+          {/* Green badge — Reviewed */}
           <div style={{
             background:'#ecfdf5', borderRadius:6,
             padding:12,
@@ -569,7 +569,7 @@ function RightPanel({ accent, onAccentChange, invoiceTotal }) {
                 Reviewed by your advisor
               </p>
               <p style={{fontSize:12, fontWeight:500, color:'#111827', marginTop:4, lineHeight:'14px'}}>
-                Mar√≠a Garc√≠a ¬∑ 31/03/2026
+                María García · 31/03/2026
               </p>
             </div>
           </div>
@@ -648,7 +648,7 @@ function RightPanel({ accent, onAccentChange, invoiceTotal }) {
           </div>
         </>}
 
-        {/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê MESSAGES ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */}
+        {/* ═══════ MESSAGES ═══════ */}
         {tab==='mensajes' && <React.Fragment>
           {msgs.map((m,i) => {
             const isOwn = m.name === 'Me';
@@ -685,12 +685,12 @@ function RightPanel({ accent, onAccentChange, invoiceTotal }) {
           })}
         </React.Fragment>}
 
-        {/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê HISTORY ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */}
+        {/* ═══════ HISTORY ═══════ */}
         {tab==='historial' && (() => {
           const items = [
-            { action:'Invoice created',              user:'Biel Gonz√°lez', time:'29/03/2026 ¬∑ 09:12' },
-            { action:'Reviewed by Advisor',           user:'Mar√≠a Garc√≠a',   time:'31/03/2026 ¬∑ 10:44' },
-            { action:'Sent by email',                 user:'Biel Gonz√°lez', time:'31/03/2026 ¬∑ 11:01' },
+            { action:'Invoice created',              user:'Biel González', time:'29/03/2026 · 09:12' },
+            { action:'Reviewed by Advisor',           user:'María García',   time:'31/03/2026 · 10:44' },
+            { action:'Sent by email',                 user:'Biel González', time:'31/03/2026 · 11:01' },
           ];
           return (
             <div style={{position:'relative', margin:'0 -6px'}}>
@@ -707,7 +707,7 @@ function RightPanel({ accent, onAccentChange, invoiceTotal }) {
                   </div>
                   <div>
                     <p style={{fontSize:12, fontWeight:600, color:'#374151', lineHeight:'17px'}}>{item.action}</p>
-                    <p style={{fontSize:12, fontWeight:400, color:'#9ca3af', marginTop:2}}>{item.user} ¬∑ {item.time}</p>
+                    <p style={{fontSize:12, fontWeight:400, color:'#9ca3af', marginTop:2}}>{item.user} · {item.time}</p>
                   </div>
                 </div>
               ))}
@@ -717,7 +717,7 @@ function RightPanel({ accent, onAccentChange, invoiceTotal }) {
 
       </div>{/* end content */}
 
-      {/* ‚îÄ‚îÄ MESSAGE INPUT ‚îÄ‚îÄ */}
+      {/* ── MESSAGE INPUT ── */}
       {tab==='mensajes' && <>
         <div style={{height:1, background:'#f3f4f6', flexShrink:0, margin:'0 30px'}} />
         <div style={{padding:'20px 30px', flexShrink:0, display:'flex', gap:6}}>
@@ -726,7 +726,7 @@ function RightPanel({ accent, onAccentChange, invoiceTotal }) {
             value={msgInput}
             onChange={e => setMsgInput(e.target.value)}
             onKeyDown={e => { if (e.key==='Enter') sendMsg(); }}
-            placeholder="Write a message‚Ä¶"
+            placeholder="Write a message…"
             style={{
               flex:1, border:'1px solid #e5e7eb', borderRadius:6,
               padding:'7px 10px', fontSize:12, color:'#374151',
@@ -737,12 +737,12 @@ function RightPanel({ accent, onAccentChange, invoiceTotal }) {
             background:'#1963ef', color:'white', fontSize:20, flexShrink:0,
             display:'flex', alignItems:'center', justifyContent:'center',
             lineHeight:1, paddingBottom:2,
-          }}>‚Ä∫</button>
+          }}>›</button>
         </div>
         <div style={{height:1, background:'#f3f4f6', flexShrink:0, margin:'0 30px'}} />
       </>}
 
-      {/* ‚îÄ‚îÄ SEND BUTTON ‚îÄ‚îÄ */}
+      {/* ── SEND BUTTON ── */}
       <div style={{
         padding:'20px 30px 20px',
         flexShrink:0,
@@ -765,9 +765,9 @@ function RightPanel({ accent, onAccentChange, invoiceTotal }) {
   );
 }
 
-/* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+/* ─────────────────────────────────────────────────────────
    APP ROOT
-‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+───────────────────────────────────────────────────────── */
 function App() {
   const [accent, setAccent] = useState('#7C5CFC');
   const [invoiceTotal, setInvoiceTotal] = useState(1991.66);
@@ -800,7 +800,7 @@ function App() {
           </div>
         </div>
 
-        {/* ‚îÄ‚îÄ‚îÄ THE CARD ‚îÄ‚îÄ‚îÄ */}
+        {/* ─── THE CARD ─── */}
         <div style={{
           display:'flex',
           width:1215, height:600,
@@ -812,7 +812,7 @@ function App() {
         }}>
           <Sidebar />
 
-          {/* Main area ‚Äî gray background with invoice card */}
+          {/* Main area — gray background with invoice card */}
           <div style={{
             width:776, background:'#f9fafb',
             flexShrink:0,
