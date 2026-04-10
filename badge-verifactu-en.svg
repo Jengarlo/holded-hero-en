@@ -18,6 +18,6 @@
     <path d="M624.61 78.0967V33.9373H652.516V112.443H626.026V97.5186H625.217C623.532 102.527 620.583 106.446 616.37 109.274C612.157 112.068 607.152 113.465 601.355 113.465C595.929 113.465 591.177 112.204 587.099 109.683C583.055 107.161 579.904 103.686 577.646 99.2564C575.421 94.8268 574.292 89.7499 574.259 84.0255V33.9373H602.164V78.0967C602.198 81.9811 603.175 85.0307 605.096 87.2455C607.051 89.4602 609.781 90.5676 613.286 90.5676C615.612 90.5676 617.617 90.0736 619.302 89.0854C621.021 88.0632 622.335 86.6321 623.245 84.7922C624.189 82.9181 624.644 80.6863 624.61 78.0967Z" fill="#00F2FF"/>
   </g>
   <!-- Certified software text -->
-  <text x="540" y="580" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="124" fill="white" letter-spacing="-2.5">Certified</text>
-  <text x="540" y="700" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="124" fill="white" letter-spacing="-2.5">software</text>
+  <text x="540" y="690" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="124" fill="white" letter-spacing="-2.5">Certified</text>
+  <text x="540" y="813" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="124" fill="white" letter-spacing="-2.5">software</text>
 </svg>
